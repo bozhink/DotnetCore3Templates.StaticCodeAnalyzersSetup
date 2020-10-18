@@ -1,22 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Bozhin Karaivanov</Authors>
     <Description>Dotnet Core Templates: static code analyzers setup for Web API project.</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/bozhink/DotnetCore3Templates.StaticCodeAnalyzersSetup</PackageProjectUrl>
     <RepositoryUrl>https://github.com/bozhink/DotnetCore3Templates.StaticCodeAnalyzersSetup.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>dotnet core, templates</PackageTags>
+    <PackageTags>dotnet core, templates, models</PackageTags>
     <Company>DotnetCore3Templates</Company>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\docs</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\docs</DocumentationFile>
   </PropertyGroup>
 
@@ -46,8 +46,6 @@
   <ItemGroup>
     <ProjectReference Include="..\DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts\DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts.csproj" />
     <ProjectReference Include="..\DotnetCore3Templates.StaticCodeAnalyzersSetup.Models\DotnetCore3Templates.StaticCodeAnalyzersSetup.Models.csproj" />
-    <ProjectReference Include="..\DotnetCore3Templates.StaticCodeAnalyzersSetup.Services\DotnetCore3Templates.StaticCodeAnalyzersSetup.Services.csproj" />
   </ItemGroup>
-
 
 </Project>

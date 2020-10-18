@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCore3Templates.StaticCodeAnalyzersSetup", "DotnetCore3Templates.StaticCodeAnalyzersSetup\DotnetCore3Templates.StaticCodeAnalyzersSetup.csproj", "{70B5473F-81CD-405D-9967-CC50B3655D07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCore3Templates.StaticCodeAnalyzersSetup.Models", "DotnetCore3Templates.StaticCodeAnalyzersSetup.Models\DotnetCore3Templates.StaticCodeAnalyzersSetup.Models.csproj", "{8F3F9274-0013-4400-B0F8-839E8251826E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts", "DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts\DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts.csproj", "{1CEFED7A-C563-4A16-AD76-2B9B1F9550AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCore3Templates.StaticCodeAnalyzersSetup.Services", "DotnetCore3Templates.StaticCodeAnalyzersSetup.Services\DotnetCore3Templates.StaticCodeAnalyzersSetup.Services.csproj", "{F2CCA98B-F66F-449F-9B68-0FD3EFC98D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{70B5473F-81CD-405D-9967-CC50B3655D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70B5473F-81CD-405D-9967-CC50B3655D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70B5473F-81CD-405D-9967-CC50B3655D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F3F9274-0013-4400-B0F8-839E8251826E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F3F9274-0013-4400-B0F8-839E8251826E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F3F9274-0013-4400-B0F8-839E8251826E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F3F9274-0013-4400-B0F8-839E8251826E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CEFED7A-C563-4A16-AD76-2B9B1F9550AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CEFED7A-C563-4A16-AD76-2B9B1F9550AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CEFED7A-C563-4A16-AD76-2B9B1F9550AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CEFED7A-C563-4A16-AD76-2B9B1F9550AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CCA98B-F66F-449F-9B68-0FD3EFC98D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CCA98B-F66F-449F-9B68-0FD3EFC98D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CCA98B-F66F-449F-9B68-0FD3EFC98D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CCA98B-F66F-449F-9B68-0FD3EFC98D37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

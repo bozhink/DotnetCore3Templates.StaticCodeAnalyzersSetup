@@ -5,47 +5,53 @@
 namespace DotnetCore3Templates.StaticCodeAnalyzersSetup.Controllers
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using System.Net;
+    using DotnetCore3Templates.StaticCodeAnalyzersSetup.Contracts;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
+    /// <summary>
+    /// Weather forecast controller.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing",
-            "Bracing",
-            "Chilly",
-            "Cool",
-            "Mild",
-            "Warm",
-            "Balmy",
-            "Hot",
-            "Sweltering",
-            "Scorching",
-        };
-
+        private readonly IWeatherForecastService weatherForecastService;
         private readonly ILogger<WeatherForecastController> logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WeatherForecastController"/> class.
+        /// </summary>
+        /// <param name="weatherForecastService">Instance of <see cref="IWeatherForecastService"/>.</param>
+        /// <param name="logger">Logger.</param>
+        public WeatherForecastController(IWeatherForecastService weatherForecastService, ILogger<WeatherForecastController> logger)
         {
+            this.weatherForecastService = weatherForecastService ?? throw new ArgumentNullException(nameof(weatherForecastService));
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
+        /// <summary>
+        /// Gets weather forecast for next 5 days.
+        /// </summary>
+        /// <returns>Array of forecast items for next 5 days.</returns>
+        /// <response code="200">Returns evaluated items.</response>
+        /// <response code="500">If something unexpected happened. See log for details.</response>
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Endpoint")]
+        public IActionResult Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            try
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)],
-            })
-            .ToArray();
+                int numberOfDays = 5;
+                var response = this.weatherForecastService.GetWeatherForecastForNextDays(numberOfDays);
+                return this.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError(ex, ex.Message);
+                return this.StatusCode((int)HttpStatusCode.InternalServerError);
+            }
         }
     }
 }

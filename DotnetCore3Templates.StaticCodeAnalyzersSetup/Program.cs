@@ -7,14 +7,21 @@ namespace DotnetCore3Templates.StaticCodeAnalyzersSetup
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
-    public class Program
+    /// <summary>
+    /// Entry point of the application.
+    /// </summary>
+    public static class Program
     {
+        /// <summary>
+        /// Entry point method of the application.
+        /// </summary>
+        /// <param name="args">Arguments to run the application.</param>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
