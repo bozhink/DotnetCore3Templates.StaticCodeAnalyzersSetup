@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+// <copyright file="Program.cs" company="DotnetCore3Templates">
+// Copyright (c) 2020 DotnetCore3Templates. All rights reserved.
+// </copyright>
 
 namespace DotnetCore3Templates.StaticCodeAnalyzersSetup
 {
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Hosting;
+
     public class Program
     {
         public static void Main(string[] args)
